@@ -1,0 +1,72 @@
+:root {
+    --color-dark: #001F3F;       /* Warna utama: navy tua */
+    --color-accent: #00509E;     /* Aksen: biru lebih cerah */
+    --color-soft: #E1ECF7;       /* Kartu/table background */
+    --color-light: #F5F9FC;      /* Latar belakang halaman */
+    --color-text: #0a0f2cbb;       /* Teks: biru gelap solid */
+    --color-hover: #D2E6FB;      /* Hover lembut untuk tabel */
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    background-color: var(--color-light);
+    color: var(--color-text);
+}
+
+.navbar {
+    background-color: var(--color-dark) !important;
+}
+
+.btn-primary {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.card {
+    background-color: var(--color-soft);
+    border: none;
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* ===== TABEL STYLING ===== */
+
+table {
+    color: var(--color-text);
+    background-color: var(--color-light);
+}
+
+table th {
+    background-color: var(--color-dark) !important;
+    color: #fff !important;
+    text-align: center;
+}
+
+table td {
+    color: var(--color-text) !important;
+}
+
+table tr:hover {
+    background-color: var(--color-hover);
+}
+
+table, th, td {
+    border-color: #b0e7cc !important; /* garis halus hijau pastel */
+}

@@ -14,26 +14,29 @@ class PublicController extends Controller
 
     public function index()
     {
-        $categories = [
-            'posts_sc' => 1,          // Source Code
-            'posts_tutor' => 2,       // Tutorial
-            'posts_artikel' => 3,     // Artikel
-            'posts_tipstriks' => 4,   // Tips & Trik
-            'posts_berita' => 5       // Berita
-        ];
+        // Ambil semua kategori
+        $categories = Category::all();
 
+        // Inisialisasi array posts
         $posts = [];
 
-        foreach ($categories as $key => $categoryId) {
+        // Loop kategori, ambil postingan masing-masing kategori
+        foreach ($categories as $category) {
+            // Buat key yang lebih deskriptif, misalnya 'posts_artikel', 'posts_tutor'
+            $key = 'posts_' . $category->slug;
+
+            // Ambil post sesuai kategori
             $posts[$key] = Post::latest()
                 ->with(['category', 'tags', 'technologies', 'images', 'author'])
                 ->where('status', 'published')
-                ->where('category_id', $categoryId)
+                ->where('category_id', $category->id)
                 ->paginate(4);
         }
 
-        return view('public.home', $posts);
+        // Kirim data categories dan posts ke view
+        return view('public.home', compact('categories', 'posts'));
     }
+
 
 
     public function post_show($id, $slug)

@@ -1,3 +1,20 @@
+<style>
+    .footer-nav a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-nav a:hover {
+        color: #00BFFF;
+    }
+
+    .footer-nav span {
+        margin: 0 4px;
+        color: #6c757d;
+    }
+</style>
+
 <footer class="text-white pt-5 pb-4 mt-5" style="background: var(--color-dark, #1e1e2f);">
     <div class="container">
         <div class="row gy-4">
@@ -20,17 +37,13 @@
             {{-- Navigasi --}}
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Navigasi</h5>
-                <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="/" class="text-white text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="{{ route('posts.kategori', 'source-code') }}"
-                            class="text-white text-decoration-none">Source Code</a></li>
-                    <li class="mb-2"><a href="{{ route('posts.kategori', 'tutorial') }}"
-                            class="text-white text-decoration-none">Tutorial</a></li>
-                    <li class="mb-2"><a href="{{ route('posts.kategori', 'artikel') }}"
-                            class="text-white text-decoration-none">Artikel</a></li>
-                    <li class="mb-2"><a href="{{ route('posts.kategori', 'berita') }}"
-                            class="text-white text-decoration-none">Berita</a></li>
-                </ul>
+                <div class="d-flex flex-wrap gap-2 small footer-nav">
+                    <a href="/">Home</a><span>|</span>
+                    <a href="{{ route('posts.kategori', 'source-code') }}">Source Code</a><span>|</span>
+                    <a href="{{ route('posts.kategori', 'tutorial') }}">Tutorial</a><span>|</span>
+                    <a href="{{ route('posts.kategori', 'artikel') }}">Artikel</a><span>|</span>
+                    <a href="{{ route('posts.kategori', 'berita') }}">Berita</a>
+                </div>
             </div>
 
             {{-- Sosial Media --}}
@@ -49,7 +62,6 @@
                         target="_blank">www.terminalcopas.com</a><br>
                     <a href="tel:0890123456789" class="text-white text-decoration-none">0890123456789</a>
                 </p>
-
             </div>
         </div>
 

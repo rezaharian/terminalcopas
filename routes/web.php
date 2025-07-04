@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\PostController;
@@ -58,6 +59,7 @@ Route::middleware($adminMiddleware)
     ->prefix('admin')->name('admin.')
     ->group(function () {
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+        Route::resource('categories', App\Http\Controllers\Admin\CategoryController::class);
     });
 
 // Dashboard & Posts tanpa prefix, tetap admin only

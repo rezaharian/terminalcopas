@@ -127,6 +127,12 @@
                     👥 Users
                 </a>
             </li>
+            <li class="nav-item mt-1">
+                <a class="nav-link {{ request()->is('admin/categories*') ? 'active' : '' }}"
+                    href="{{ route('admin.categories.index') }}">
+                    👥 Category
+                </a>
+            </li>
         </ul>
 
         <div class="navbar-user mt-auto pt-4">
